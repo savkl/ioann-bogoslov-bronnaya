@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 150"><defs>
+<g id="leaf"><path d="M0 0C4-22 26-25 30-39C38-14 23 0 0 0Z" fill="#fff9f0"/></g>
+<g id="vine" fill="none" stroke="#fff9f0" stroke-width="3" stroke-linecap="round"><path d="M0 35C25 8 57 5 77 30C95 53 120 56 150 30C170 12 184 17 190 33M12 35C25 63 57 58 57 42C57 29 38 28 39 39M110 33C103 6 126 0 134 15C142 31 124 33 123 23"/><use href="#leaf" transform="translate(20 29) scale(.7)"/><use href="#leaf" transform="translate(78 30) rotate(150) scale(.65)"/><use href="#leaf" transform="translate(159 30) scale(.65)"/></g>
+<g id="bird" fill="#fff9f0"><path d="M-3 20C14 25 28 20 31 4C34-9 48-12 58-3L50 0C41-2 40 8 43 17C52 32 65 34 72 32C52 51 25 53 11 40L-12 47L-4 33L-19 28Z"/><path d="M14 29C-7 9 -8-10-5-14C9-8 22 4 25 18Z"/><path d="M23 33L27 54H43V57H21L18 35Z"/><circle cx="47" cy="3" r="2" fill="#832d3d"/></g>
+</defs>
+<g stroke="#832d3d" stroke-width="2" fill="none"><path d="M24 40H776V130H24ZM31 47H769V123H31"/><path d="M24 40C6 32 6 13 2 7C27 10 37 29 24 40ZM776 40C794 32 794 13 798 7C773 10 763 29 776 40ZM400 38C374 24 392 14 400 1C408 14 426 24 400 38Z"/><path d="M400 38C379 42 367 34 379 27C383 25 389 30 389 32M400 38C421 42 433 34 421 27C417 25 411 30 411 32"/></g>
+<path fill="#832d3d" d="M36 52H764V118H36Z"/>
+<use href="#vine" transform="translate(44 57) scale(1 .8)"/><use href="#vine" transform="translate(756 57) scale(-1 .8)"/>
+<use href="#bird" transform="translate(255 74) scale(.6)"/><use href="#bird" transform="translate(545 74) scale(-.6 .6)"/>
+<g transform="translate(400 85)" fill="none" stroke="#fff9f0" stroke-width="2"><circle r="29"/><circle r="24"/><path d="M0-23V23M-23 0H23M-16-16L16 16M16-16L-16 16"/><path d="M0-21C-12-7-10-3 0 0C10-3 12-7 0-21ZM21 0C7-12 3-10 0 0C3 10 7 12 21 0ZM0 21C12 7 10 3 0 0C-10 3-12 7 0 21ZM-21 0C-7 12-3 10 0 0C-3-10-7-12-21 0Z"/></g>
+<g stroke="#fff9f0" fill="none" stroke-width="2"><path d="M240 53Q226 84 240 117M320 53Q334 84 320 117M480 53Q466 84 480 117M560 53Q574 84 560 117"/></g>
+<g stroke="#832d3d" fill="none" stroke-width="2"><path d="M185 40C187 25 206 24 207 37C208 51 185 52 187 65M615 40C613 25 594 24 593 37C592 51 615 52 613 65M185 130C187 145 206 146 207 133M615 130C613 145 594 146 593 133"/></g></svg>

@@ -48,3 +48,15 @@ function cinematicOpening(){
  reduced.addEventListener('change',()=>{if(reduced.matches){animations.forEach(a=>a.cancel());scene.style.transform='none'}});
 }
 cinematicOpening();
+
+// Manuscript details reveal once; they never compete with reading.
+function manuscriptMotion(){
+ if(reduced.matches)return;
+ const ease='cubic-bezier(.23,1,.32,1)';
+ const seal=document.querySelector('.archive-seal');
+ const sealAnimation=seal?.animate([{opacity:0,transform:'rotate(-14deg) scale(.96)'},{opacity:.72,transform:'rotate(0deg) scale(1)'}],{duration:1200,delay:320,easing:ease,fill:'backwards'});
+ const observer=new IntersectionObserver(entries=>{for(const entry of entries){if(!entry.isIntersecting)continue;observer.unobserve(entry.target);entry.target.animate([{opacity:0,clipPath:'inset(0 100% 0 0)'},{opacity:1,clipPath:'inset(0 0 0 0)'}],{duration:850,easing:ease})}},{threshold:.5});
+ document.querySelectorAll('.manuscript-divider,.manuscript-headpiece').forEach(el=>observer.observe(el));
+ reduced.addEventListener('change',()=>{if(reduced.matches){sealAnimation?.cancel();observer.disconnect()}});
+}
+manuscriptMotion();

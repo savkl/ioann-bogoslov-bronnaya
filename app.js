@@ -29,3 +29,22 @@ function parishMotion(){
  document.querySelectorAll('.history-story,.history-visual,.history-milestones,.preview-services article,.parish-links>a,.section-head,.history-chapter,.clergy-person,.archive-list article,.reading-resources').forEach(el=>reveal.observe(el));
 }
 parishMotion();
+
+// A single opening sequence: the scene settles first, then the title and actions.
+function cinematicOpening(){
+ const cover=document.querySelector('.cinema-cover');if(!cover)return;
+ const scene=cover.querySelector('.cinema-scene'),picture=cover.querySelector('.cinema-image');
+ const ease='cubic-bezier(.23,1,.32,1)';
+ let visible=true,queued=false;
+ const active=new IntersectionObserver(entries=>{visible=entries[0].isIntersecting},{threshold:0});active.observe(cover);
+ const paint=()=>{queued=false;if(!visible||reduced.matches){scene.style.transform='none';return}const offset=Math.min(Math.max(-cover.getBoundingClientRect().top,0)*.12,65);scene.style.transform=`translate3d(0,${offset}px,0)`};
+ const onScroll=()=>{if(!queued&&visible&&!reduced.matches){queued=true;requestAnimationFrame(paint)}};
+ addEventListener('scroll',onScroll,{passive:true});
+ const animations=[];
+ if(!reduced.matches){
+  animations.push(picture.animate([{transform:'scale(1.12)',opacity:.4},{transform:'scale(1.04)',opacity:1}],{duration:1800,easing:ease,fill:'backwards'}));
+  cover.querySelectorAll('.cinema-jurisdiction,.cinema-dedication,.cinema-heading h1>span,.cinema-heading h1>small,.cinema-welcome,.cinema-actions').forEach((el,i)=>animations.push(el.animate([{opacity:0,transform:'translateY(22px)'},{opacity:1,transform:'translateY(0)'}],{duration:850,delay:180+i*70,easing:ease,fill:'backwards'})));
+ }
+ reduced.addEventListener('change',()=>{if(reduced.matches){animations.forEach(a=>a.cancel());scene.style.transform='none'}});
+}
+cinematicOpening();
